@@ -2,6 +2,10 @@
 <html>
 <body>
 <h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<p id="a">I'm hosted with GitHub Pages.</p>
+<script>
+var strGET = window.location.search.replace( '?', '');
+document.getElemnetById('a')=strGET;
+</script>
 </body>
 </html>
