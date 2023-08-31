@@ -120,8 +120,9 @@
   <script src="./jquery-2.2.4.min.js"></script>
   <script>
     $(document).ready(function () {
-      var value = 'https://github.com/kciter/qart.js';
-      var filter = 'threshold';
+      var strGET = window.location.search.replace( '?', '');
+      var value = "https://t.me/rucarsbot?start="+strGET;
+      var filter = 'color';
       var imagePath = './example.png';
       var version = 10;
       var imageSize = 75 + (version * 12) - 24;
