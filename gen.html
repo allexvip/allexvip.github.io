@@ -98,7 +98,7 @@
       function makeQR() {
         // console.log('Current version:', version)
         // qrcode.stringToBytes = qrcode.stringToBytesFuncs['UTF-8'];
-        var qr = qrcode.QRCode(version, 'H');
+        var qr = qrcode.QRCode(10, 'H');
         qr.addData(value);
         try {
           qr.make();
