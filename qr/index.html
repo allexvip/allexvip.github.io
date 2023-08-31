@@ -1,0 +1,94 @@
+    <!doctype html>
+    <html>
+        <head>
+            <title>QArt.js Example</title>
+            <style>
+                body {
+                    width: 100%;
+                    padding: 0;
+                    background-color: #FFFFF6;
+                }
+                h1, h2 {
+                    text-align: center;
+                }
+    
+                input[type=text] {
+                    display: block;
+                    width: 380px;
+                    height: 30px;
+                    margin: 0 auto;
+                    font-size: 14pt;
+                }
+    
+                input[type=number] {
+                    display: block;
+                    width: 380px;
+                    height: 30px;
+                    margin: 0 auto;
+                    font-size: 14pt;
+                }
+    
+                input[type=file] {
+                    display: block;
+                    width: 380px;
+                    height: 30px;
+                    margin: 0 auto;
+                }
+    
+                label {
+                    display: block;
+                    width: 380px;
+                    margin: 10px auto;
+                }
+    
+                .group {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .clear {
+                    clear: both;
+                }
+                #qr {
+                    margin: 5px;
+                }
+                #image {
+                    margin: 5px;
+                }
+            </style>
+        </head>
+    
+        <body>
+            <div id="qart"></div>
+    
+            <script src="qrcode.js"></script>
+            <script src="qart.min.js"></script>
+            <script src="jquery-2.2.4.min.js"></script>
+            <script>
+                // directly appending canvas to the document
+                
+
+                function funonload() {
+                //     new QArt({
+                //   value: "test.ru",
+                //   imagePath: './example.png',
+                //   filter: "color",
+                //   size: 195
+                //   }).make(document.getElementById('qart'));
+
+                     // using callback
+                  new QArt({
+                    value: "test.ru",
+                    imagePath: 'example.png',
+                    filter:  "color",
+                    size: 195
+                    }).make(function (canvas) {
+                      document.getElementById('qart').appendChild(canvas)
+                    });
+                }
+                window.onload = funonload;
+              
+               
+              </script>
+        <body>
+    </html>
