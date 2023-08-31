@@ -66,45 +66,6 @@
 </head>
 
 <body>
-  <h1>QArt.js</h1>
-
-  <h2>From</h2>
-  <label>
-    Value:
-    <textarea id="value" type="text" rows="3" cols="45">https://github.com/kciter/qart.js</textarea>
-  </label>
-
-  <label>
-    Background:
-    <input id="bg" type="text" value="#C2C">
-  </label>
-
-  <label>
-    Size:
-    <input id="size" type="number" value="195">
-  </label>
-
-  <label>
-    Version:
-    <input id="version" type="number" value="10">
-  </label>
-
-  <label>
-    Fill type:
-    <select id='fillType' name="fillType">
-      <option>scale_to_fit</option>
-      <option>fill</option>
-    </select>
-  </label>
-
-  <label>
-    <input id="file" type="file">
-  </label>
-
-  <label>
-    Threshold: <input type="radio" value="threshold" name="filter" checked>
-    Color: <input type="radio" value="color" name="filter">
-  </label>
 
   <div class="group">
     <div id="qr"></div>
@@ -160,60 +121,7 @@
         }).make(document.getElementById('combine'));
       }
 
-      function getBase64(file, callback) {
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-          callback(reader.result);
-        };
-      }
-
-      $('#value').keyup(function () {
-        value = $(this).val();
-        makeQR();
-        makeQArt();
-      });
-
-      $('#bg').keyup(function () {
-        bg = $(this).val();
-        makeQArt();
-      });
-
-      $('#size').keyup(function () {
-        size = $(this).val();
-        makeQArt();
-      });
-
-      $('#fillType').bind('change', function () {
-        fillType = $(this).val();
-        makeQArt();
-      });
-
-
-      $('#version').bind('keyup change click', function () {
-        console.log($('#version').val());
-        version = $('#version').val();
-        imageSize = 75 + (version * 12) - 24;
-        $('#image img').width(imageSize);
-        makeQR();
-        makeQArt();
-      });
-
-      $('#file').change(function () {
-        getBase64(this.files[0], function (base64Img) {
-          var regex = /data:(.*);base64,(.*)/gm;
-          var parts = regex.exec(base64Img);
-          imagePath = parts[0];
-          $('#image img').attr('src', imagePath);
-          makeQArt();
-        });
-      });
-
-      $('input[type=radio]').click(function () {
-        filter = $(this).val();
-        makeQArt();
-      });
-
+      
       makeQR();
       makeQArt();
     });
