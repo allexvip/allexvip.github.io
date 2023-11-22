@@ -44,6 +44,10 @@
 </head>
 
 <body>
+<select>
+    <option name="Сообщение об АП" value="ap" selected></option>
+    <option name="Жалоба на определение об отказе в возбуждении дела об АП" value="ap"></option>
+</select>
    <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
    </div>
    <p>Just text</p> <!--Просто текст для проверки-->
@@ -91,6 +95,8 @@
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
       tg.sendData("some string that we need to send"); 
       //при клике на основную кнопку отправляем данные в строковом виде
+      tg.close()
+      // закрываем приложение
    });
 
 
