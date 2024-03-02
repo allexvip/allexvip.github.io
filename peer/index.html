@@ -52,14 +52,14 @@ if ($roomID == '1') {
 <script>
     var strGET = window.location.search.replace( '?', '');
     if (strGET.indexOf("start") !== -1){
-        createRoom();
         var roomID = strGET.replace( 'start=', '');
         document.getElementById("room-input").value=roomID;
+        createRoom();
     }
     if (strGET.indexOf("join") !== -1){
-        createRoom();  
         var roomID = strGET.replace( 'join=', '');
         document.getElementById("room-input").value=roomID;
+        joinRoom();
     }
     // alert(strGET);
 //     <?php if (!empty($_GET['join'])) {
