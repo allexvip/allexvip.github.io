@@ -2,11 +2,19 @@
 <html>
 <body>
 <h1>2AU.ru</h1>
-<p id="a">I'm hosted with GitHub Pages.</p>
+<p id="a"></p>
 <script>
   var strGET = window.location.search.replace( '?', '');
-  //alert(strGET);
-  window.location.href = "https://t.me/rucarsbot?start="+strGET;
+  if (strGET.length == 0) {
+    alert("Пусто");
+  }
+  else {
+    // alert(strGET);
+    window.location.href = "https://t.me/rucarsbot?start="+strGET;
+  }
+
+  
+  // 
 </script>
 </body>
 </html>
